@@ -1,7 +1,7 @@
+// src/pages/Login.jsx
 
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import {
   Mail,
   Lock,
@@ -37,7 +37,6 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setError("");
 
     const email = formData.email.trim().toLowerCase();
@@ -67,21 +66,17 @@ function Login() {
       const customer = response.data.customer;
 
       if (!token || !customer) {
-        setError(
-          "The server response is incomplete. Please contact support."
-        );
+        setError("The server response is incomplete. Please contact support.");
         return;
       }
 
       sessionStorage.setItem("shopora_token", token);
-
       sessionStorage.setItem(
         "shopora_customer",
         JSON.stringify(customer)
       );
 
       navigate("/profile", { replace: true });
-
     } catch (err) {
       setError(
         err.response?.data?.message ||
@@ -94,7 +89,6 @@ function Login() {
 
   return (
     <div className="auth-page">
-
       <div className="auth-brand">
         <Link to="/" className="auth-logo">
           <ShoppingBag size={25} />
@@ -103,14 +97,9 @@ function Login() {
       </div>
 
       <div className="auth-container">
-
         <div className="auth-heading">
-          <span className="auth-eyebrow">
-            WELCOME BACK
-          </span>
-
+          <span className="auth-eyebrow">WELCOME BACK</span>
           <h1>Sign in to SHOPORA</h1>
-
           <p>
             Access your account, explore your favourites
             and continue your shopping journey.
@@ -118,7 +107,6 @@ function Login() {
         </div>
 
         <form className="auth-form" onSubmit={handleSubmit}>
-
           <div className="auth-field">
             <label htmlFor="login-email">Email Address *</label>
 
@@ -158,7 +146,7 @@ function Login() {
               <button
                 type="button"
                 className="password-toggle"
-                onClick={() => setShowPassword(!showPassword)}
+                onClick={() => setShowPassword((previous) => !previous)}
                 aria-label="Toggle password visibility"
               >
                 {showPassword ? (
@@ -183,7 +171,6 @@ function Login() {
           >
             {loading ? "Signing In..." : "Sign In"}
           </button>
-
         </form>
 
         <div className="auth-switch">
@@ -195,7 +182,6 @@ function Login() {
           Your SHOPORA account helps you manage
           your shopping experience securely.
         </p>
-
       </div>
     </div>
   );

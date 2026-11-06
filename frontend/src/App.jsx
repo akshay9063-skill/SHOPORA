@@ -8,6 +8,24 @@ import {
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
+// Add this import at the top of src/App.jsx
+
+import heroImage from "./assets/hero.png";
+
+// In the homepage hero section, use this complete hero-image-card block:
+
+<div className="hero-image-card">
+  <img
+    src={heroImage}
+    alt="SHOPORA everyday collection"
+    className="hero-background-image"
+  />
+
+  <div className="hero-image-overlay">
+    <span>CURATED FOR YOU</span>
+    <strong>Make room for better.</strong>
+  </div>
+</div>
 
 import {
   Search,

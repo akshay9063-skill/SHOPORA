@@ -1847,3 +1847,501 @@ a {
     align-self: center;
   }
 }
+
+/* ==========================================
+   SHOPORA AUTHENTICATION PAGES
+   Login + Register
+========================================== */
+
+.auth-page {
+  min-height: 100vh;
+  padding: 35px 20px 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 10%, #e5ebff 0, transparent 35%),
+    radial-gradient(circle at 90% 90%, #e8edff 0, transparent 35%),
+    #f7f8fc;
+}
+
+.auth-brand {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 22px;
+}
+
+.auth-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #101b35;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.auth-logo svg {
+  color: #3458db;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 42px;
+  border: 1px solid #e8ebf2;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 60px rgba(16, 27, 53, 0.09);
+}
+
+.auth-heading {
+  margin-bottom: 28px;
+}
+
+.auth-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #3458db;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.auth-heading h1 {
+  margin: 0 0 12px;
+  color: #101b35;
+  font-size: clamp(27px, 5vw, 35px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
+}
+
+.auth-heading p {
+  margin: 0;
+  color: #737d91;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.auth-field label {
+  color: #172033;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.auth-input-wrap {
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 14px;
+  border: 1px solid #e1e5ef;
+  border-radius: 7px;
+  background: #fff;
+  color: #7c879c;
+  transition: 0.2s ease;
+}
+
+.auth-input-wrap:focus-within {
+  border-color: #3458db;
+  box-shadow: 0 0 0 3px rgba(52, 88, 219, 0.1);
+}
+
+.auth-input-wrap > svg {
+  flex-shrink: 0;
+  color: #78849b;
+}
+
+.auth-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #172033;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.auth-input-wrap input::placeholder {
+  color: #a0a8b7;
+}
+
+.auth-input-wrap input:focus {
+  outline: none;
+  border: 0;
+  box-shadow: none;
+}
+
+.password-toggle {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  color: #737d91;
+}
+
+.password-toggle:hover {
+  color: #3458db;
+}
+
+.auth-submit {
+  min-height: 50px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 7px;
+  background: #3458db;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.auth-submit:hover:not(:disabled) {
+  background: #2445c0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(52, 88, 219, 0.2);
+}
+
+.auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-message {
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.auth-error {
+  border: 1px solid #fecaca;
+  background: #fff1f2;
+  color: #b42318;
+}
+
+.auth-success {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.auth-switch {
+  margin-top: 25px;
+  color: #737d91;
+  text-align: center;
+  font-size: 12px;
+}
+
+.auth-switch a {
+  color: #3458db;
+  font-weight: 800;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.auth-terms {
+  margin: 22px 0 0;
+  color: #929aab;
+  font-size: 10px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Responsive authentication layout */
+
+@media (max-width: 520px) {
+  .auth-page {
+    padding: 25px 15px 35px;
+  }
+
+  .auth-brand {
+    max-width: 100%;
+    padding-left: 5px;
+  }
+
+  .auth-container {
+    padding: 28px 21px;
+    border-radius: 12px;
+  }
+
+  .auth-heading h1 {
+    font-size: 28px;
+  }
+}
+/* Add this complete section at the bottom of src/App.css */
+
+/* SHOPORA AUTHENTICATION PAGES */
+
+.auth-page {
+  min-height: 100vh;
+  padding: 35px 20px 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 10%, #e5ebff 0, transparent 35%),
+    radial-gradient(circle at 90% 90%, #e8edff 0, transparent 35%),
+    #f7f8fc;
+}
+
+.auth-brand {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 22px;
+}
+
+.auth-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #101b35;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.auth-logo svg {
+  color: #3458db;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 42px;
+  border: 1px solid #e8ebf2;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 60px rgba(16, 27, 53, 0.09);
+}
+
+.auth-heading {
+  margin-bottom: 28px;
+}
+
+.auth-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #3458db;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.auth-heading h1 {
+  margin: 0 0 12px;
+  color: #101b35;
+  font-size: clamp(27px, 5vw, 35px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
+}
+
+.auth-heading p {
+  margin: 0;
+  color: #737d91;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.auth-field label {
+  color: #172033;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.auth-input-wrap {
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 14px;
+  border: 1px solid #e1e5ef;
+  border-radius: 7px;
+  background: #fff;
+  color: #7c879c;
+  transition: 0.2s ease;
+}
+
+.auth-input-wrap:focus-within {
+  border-color: #3458db;
+  box-shadow: 0 0 0 3px rgba(52, 88, 219, 0.1);
+}
+
+.auth-input-wrap > svg {
+  flex-shrink: 0;
+  color: #78849b;
+}
+
+.auth-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #172033;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.auth-input-wrap input::placeholder {
+  color: #a0a8b7;
+}
+
+.auth-input-wrap input:focus {
+  outline: none;
+  border: 0;
+  box-shadow: none;
+}
+
+.password-toggle {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  color: #737d91;
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: #3458db;
+}
+
+.auth-submit {
+  min-height: 50px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 7px;
+  background: #3458db;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.auth-submit:hover:not(:disabled) {
+  background: #2445c0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(52, 88, 219, 0.2);
+}
+
+.auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-message {
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.auth-error {
+  border: 1px solid #fecaca;
+  background: #fff1f2;
+  color: #b42318;
+}
+
+.auth-success {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.auth-switch {
+  margin-top: 25px;
+  color: #737d91;
+  text-align: center;
+  font-size: 12px;
+}
+
+.auth-switch a {
+  color: #3458db;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.auth-terms {
+  margin: 22px 0 0;
+  color: #929aab;
+  font-size: 10px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .auth-page {
+    padding: 25px 15px 35px;
+  }
+
+  .auth-brand {
+    max-width: 100%;
+    padding-left: 5px;
+  }
+
+  .auth-container {
+    padding: 28px 21px;
+    border-radius: 12px;
+  }
+
+  .auth-heading h1 {
+    font-size: 28px;
+  }
+}

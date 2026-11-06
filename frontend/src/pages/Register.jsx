@@ -1,3 +1,4 @@
+// src/pages/Register.jsx
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -55,7 +56,6 @@ function Register() {
       return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
@@ -63,13 +63,11 @@ function Register() {
       return;
     }
 
-    // Phone validation
     if (phone && !/^[6-9]\d{9}$/.test(phone)) {
       setError("Please enter a valid 10-digit Indian mobile number.");
       return;
     }
 
-    // Password validation
     if (formData.password.length < 8) {
       setError("Password must contain at least 8 characters.");
       return;
@@ -112,7 +110,6 @@ function Register() {
 
       setShowPassword(false);
       setShowConfirmPassword(false);
-
     } catch (err) {
       setError(
         err.response?.data?.message ||
@@ -125,7 +122,6 @@ function Register() {
 
   return (
     <div className="auth-page">
-
       <div className="auth-brand">
         <Link to="/" className="auth-logo">
           <ShoppingBag size={25} />
@@ -134,12 +130,9 @@ function Register() {
       </div>
 
       <div className="auth-container">
-
         <div className="auth-heading">
           <span className="auth-eyebrow">JOIN SHOPORA</span>
-
           <h1>Create your account</h1>
-
           <p>
             Discover products, save your favourites
             and enjoy a seamless shopping experience.
@@ -147,7 +140,6 @@ function Register() {
         </div>
 
         <form className="auth-form" onSubmit={handleSubmit}>
-
           <div className="auth-field">
             <label htmlFor="full_name">Full Name *</label>
 
@@ -226,7 +218,7 @@ function Register() {
               <button
                 type="button"
                 className="password-toggle"
-                onClick={() => setShowPassword(!showPassword)}
+                onClick={() => setShowPassword((previous) => !previous)}
                 aria-label="Toggle password visibility"
               >
                 {showPassword ? (
@@ -259,7 +251,7 @@ function Register() {
                 type="button"
                 className="password-toggle"
                 onClick={() =>
-                  setShowConfirmPassword(!showConfirmPassword)
+                  setShowConfirmPassword((previous) => !previous)
                 }
                 aria-label="Toggle confirm password visibility"
               >
@@ -291,7 +283,6 @@ function Register() {
           >
             {loading ? "Creating Account..." : "Create Account"}
           </button>
-
         </form>
 
         <div className="auth-switch">
@@ -303,7 +294,6 @@ function Register() {
           By creating an account, you agree to our
           Terms of Service and Privacy Policy.
         </p>
-
       </div>
     </div>
   );
