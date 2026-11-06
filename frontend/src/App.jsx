@@ -12,20 +12,8 @@ import Profile from "./pages/Profile";
 
 import heroImage from "./assets/hero.png";
 
-// In the homepage hero section, use this complete hero-image-card block:
 
-<div className="hero-image-card">
-  <img
-    src={heroImage}
-    alt="SHOPORA everyday collection"
-    className="hero-background-image"
-  />
 
-  <div className="hero-image-overlay">
-    <span>CURATED FOR YOU</span>
-    <strong>Make room for better.</strong>
-  </div>
-</div>
 
 import {
   Search,
@@ -1639,22 +1627,27 @@ function ShoporaApp() {
         </div>
 
         <div className="hero-visual">
-          <div className="hero-image-card">
-            <div className="hero-image-overlay">
-              <span>CURATED FOR YOU</span>
-              <strong>Make room for better.</strong>
-            </div>
-          </div>
+  <div className="hero-image-card">
+    <img
+      src={heroImage}
+      alt="SHOPORA everyday collection"
+      className="hero-background-image"
+    />
 
-          <div className="hero-floating-card">
-            <span className="floating-star">✦</span>
+    <div className="hero-image-overlay">
+      <span>CURATED FOR YOU</span>
+      <strong>Make room for better.</strong>
+    </div>
+  </div>
 
-            <div>
-              <strong>Everyday essentials</strong>
-              <small>Selected with care</small>
-            </div>
-          </div>
-        </div>
+  <div className="hero-floating-card">
+    <span className="floating-star">✦</span>
+    <div>
+      <strong>Everyday essentials</strong>
+      <small>Selected with care</small>
+    </div>
+  </div>
+</div>
 
         <div className="hero-decoration hero-decoration-one" />
         <div className="hero-decoration hero-decoration-two" />
